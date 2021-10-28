@@ -7,4 +7,8 @@ class Merchant < ApplicationRecord
     per_page = 20 if per_page < 1
     limit(per_page).offset((page -1) * per_page)
   end
+
+  def self.search_by_name(name)
+    where("name ILIKE ?", "%#{name}%").order("name")
+  end
 end
