@@ -12,4 +12,13 @@ class Api::V1::MerchantsController < ApplicationController
       render json: { error: 'ERROR: Merchant Not Found.' }, status: :not_found
     end
   end
+
+  def find
+    if params[:name] && !params[:name].empty?
+      merchant = Merchant.search_by_name(params[:name])
+      render json: MerchantSerializer.new(merchant.first), status: 200
+    else
+      render json: { error: 'ERROR: Invalid Request.'}, status: :not_found
+    end
+  end
 end

@@ -39,6 +39,15 @@ class Api::V1::ItemsController < ApplicationController
     item.destroy
   end
 
+  def find_all
+    if params[:name] && !params[:name].empty?
+      items = Item.search_by_name(params[:name])
+      render json: ItemSerializer.new(items), status: 200
+    else
+      render json: { error: 'ERROR: Invalid Request.'}, status: :not_found
+    end
+  end
+
   private
 
   def item_params
