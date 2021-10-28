@@ -12,4 +12,27 @@ class Api::V1::ItemsController < ApplicationController
       render json: { error: 'ERROR: Item Not Found.' }, status: :not_found
     end
   end
+
+  def new
+  end
+
+  def create
+    item = Item.create(item_params)
+    if item.save
+      render json: ItemSerializer.new(item), status: :created
+    else
+      render json: { error: 'ERROR: Invalid Request.' }, status: :not_found
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
+  end
 end
