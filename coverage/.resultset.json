@@ -341,7 +341,7 @@
         "lines": [
           1,
           1,
-          10,
+          11,
           null,
           null
         ]
@@ -570,6 +570,31 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -649,6 +674,29 @@
           0,
           null,
           null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -669,7 +717,7 @@
           null
         ]
       },
-      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/api/v1/merchants/items_controller.rb": {
+      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/api/v1/merchant/items_controller.rb": {
         "lines": [
           1,
           null,
@@ -713,6 +761,6 @@
         ]
       }
     },
-    "timestamp": 1635278241
+    "timestamp": 1635411317
   }
 }

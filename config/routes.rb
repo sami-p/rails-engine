@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :merchants, only: [:index, :show] do
-        resources :items, module: 'merchants', only: [:index]
+        resources :items, module: 'merchant', only: [:index]
       end
-      resources :items, only: [:index, :show]
+      resources :items, only: [:index, :show, :create, :destroy]
     end
   end
 end
