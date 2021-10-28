@@ -25,6 +25,15 @@ class Api::V1::ItemsController < ApplicationController
     end
   end
 
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      render json: ItemSerializer.new(item)
+    else
+      render json: { error: 'ERROR: Invalid Request.' }, status: :not_found
+    end
+  end
+
   def destroy
     item = Item.find(params[:id])
     item.destroy
