@@ -5,7 +5,10 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show] do
         resources :items, module: 'merchant', only: [:index]
       end
-      resources :items
+      resources :items, except: [:new] do
+        # resources :merchant, module: 'item', only: [:index]
+        get 'merchant', to: 'items/merchant#index'
+      end
     end
   end
 end

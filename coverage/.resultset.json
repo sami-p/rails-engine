@@ -329,9 +329,9 @@
         "lines": [
           1,
           1,
-          36,
-          36,
-          36,
+          41,
+          41,
+          41,
           1,
           null,
           null
@@ -341,7 +341,7 @@
         "lines": [
           1,
           1,
-          13,
+          14,
           null,
           null
         ]
@@ -368,6 +368,9 @@
           1,
           null,
           1,
+          null,
+          1,
+          null,
           null,
           null,
           null
@@ -516,6 +519,35 @@
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/spec/requests/api/v1/items/merchant_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -675,6 +707,36 @@
           null
         ]
       },
+      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/api/v1/items/merchant_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
@@ -726,12 +788,6 @@
           null
         ]
       },
-      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
@@ -777,16 +833,8 @@
           null,
           null
         ]
-      },
-      "/Users/samanthapeterson/turing/3mod2107/projects/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1635435123
+    "timestamp": 1635442496
   }
 }
