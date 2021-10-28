@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Items API" do
-  it "retrieves a list of items" do
+  it "retrieves a list of all items" do
     create_list(:item, 3)
 
     get '/api/v1/items'
@@ -46,5 +46,30 @@ describe "Items API" do
     expect(item[:attributes][:unit_price]).to be_a(Float)
     expect(item[:attributes]).to have_key(:merchant_id)
     expect(item[:attributes][:merchant_id]).to be_an(Integer)
+  end
+
+  it 'creates (and deletes) an item' do
+    merchant = create(:merchant)
+
+    item_params = ({name: 'Swim Shady',
+                    description: 'JJs fish, may he rest in peace.',
+                    unit_price: 599.99,
+                    merchant_id: merchant.id})
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    post "/api/v1/items", headers: headers, params: JSON.generate(item: item_params)
+    item = Item.last
+
+    expect(response).to be_successful
+    expect(item.name).to eq(item_params[:name])
+    expect(item.description).to eq(item_params[:description])
+    expect(item.unit_price).to eq(item_params[:unit_price])
+    expect(item.merchant_id).to eq(item_params[:merchant_id])
+
+    delete "/api/v1/items/#{item.id}"
+
+    expect(response).to be_successful
+    expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
 end
