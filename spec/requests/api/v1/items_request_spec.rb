@@ -26,7 +26,7 @@ describe "Items API" do
     end
   end
 
-  it 'retrieves one item by ID' do
+  it "retrieves one item by ID" do
     id = create(:item).id
 
     get "/api/v1/items/#{id}"
@@ -48,7 +48,7 @@ describe "Items API" do
     expect(item[:attributes][:merchant_id]).to be_an(Integer)
   end
 
-  it 'creates (and deletes) an item' do
+  it "creates (and deletes) an item" do
     merchant = create(:merchant)
 
     item_params = ({name: 'Swim Shady',
@@ -71,5 +71,22 @@ describe "Items API" do
 
     expect(response).to be_successful
     expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
+
+  it "updates an existing item" do
+    merchant = create(:merchant)
+
+    id = create(:item).id
+
+    previous_name = Item.last.name
+    item_params = { name: "Ron Burgundy Poster" }
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    patch "/api/v1/items/#{id}", headers: headers, params: JSON.generate({item: item_params})
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful
+    expect(item.name).to_not eq(previous_name)
+    expect(item.name).to eq("Ron Burgundy Poster")
   end
 end
